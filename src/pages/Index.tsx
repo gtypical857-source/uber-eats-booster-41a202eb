@@ -100,11 +100,24 @@ const Index = () => {
           <p className="text-muted-foreground mb-6">Share for bonus entries!</p>
 
           <div className="grid grid-cols-2 gap-3">
-            <SocialButton icon={Share2} label="X (Twitter)" />
-            <SocialButton icon={MessageCircle} label="Instagram" />
+            <SocialButton 
+              icon={Share2} 
+              label="X (Twitter)" 
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("🍔 Win a $750 Uber Eats Voucher! Order your favorite meals for FREE!")}&url=${encodeURIComponent(affiliateLink)}`}
+            />
+            <SocialButton 
+              icon={MessageCircle} 
+              label="Instagram" 
+              href="https://www.instagram.com/"
+            />
           </div>
           <div className="mt-3">
-            <SocialButton icon={Share2} label="Facebook" className="w-full" />
+            <SocialButton 
+              icon={Share2} 
+              label="Facebook" 
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(affiliateLink)}`}
+              className="w-full" 
+            />
           </div>
         </div>
       </section>
