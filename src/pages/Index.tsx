@@ -51,7 +51,7 @@ const Index = () => {
           <div className="space-y-3">
             <StepCard step={1} description={`Click "Continue to Next Step"`} />
             <StepCard step={2} description="Enter the requested information" />
-            <StepCard step={3} description="Complete the required sponsored activities" />
+            <StepCard step={3} description="Complete the required 4-6 sponsored activities" />
             <StepCard step={4} description="Follow the instructions provided" />
           </div>
         </div>
