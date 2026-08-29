@@ -20,7 +20,7 @@ const Index = () => {
         </p>
 
         <h1 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground mb-3 text-balance">
-          Claim Your {display} Uber Eats Reward
+          Claim Your {display} Uber eats Reward
         </h1>
 
         <p className="text-muted-foreground text-base max-w-sm mx-auto mb-8">
@@ -31,7 +31,7 @@ const Index = () => {
         <div className="max-w-sm mx-auto rounded-3xl bg-[#0a1f17] p-6 text-left shadow-xl mb-10">
           <div className="flex items-start justify-between mb-8">
             <div>
-              <p className="text-white/70 text-sm font-semibold mb-1">Uber Eats</p>
+              <p className="text-white/70 text-sm font-semibold mb-1">Uber eats</p>
               <p className="text-white text-2xl font-extrabold leading-none">REWARD</p>
             </div>
             <div className="bg-uber-green text-white text-xs font-bold px-3 py-1.5 rounded-full">
