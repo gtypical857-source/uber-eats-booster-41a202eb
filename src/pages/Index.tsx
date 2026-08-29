@@ -2,121 +2,101 @@ import { Button } from "@/components/ui/button";
 import StepCard from "@/components/StepCard";
 import SocialButton from "@/components/SocialButton";
 import Footer from "@/components/Footer";
-import { CheckCircle, Gift, DollarSign, Share2, MessageCircle } from "lucide-react";
-import foodHero from "@/assets/food-hero.jpg";
+import { useRewardCurrency } from "@/hooks/use-reward-currency";
+import { ArrowRight, Share2, MessageCircle } from "lucide-react";
 
 const Index = () => {
-  const affiliateLink = "https://gloffers.org/aff_c?offer_id=1999&aff_id=31368";
+  const affiliateLink = "https://tr.taghal.com/tr?offer_id=62&pub=70";
+  const { display, symbol } = useRewardCurrency();
+
+  const shareMessage = `Claim your ${display} Uber Eats reward!`;
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="px-6 pt-12 pb-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          <span className="text-gradient-primary">Win a $750</span>
-          <br />
-          <span className="text-gradient-secondary">Uber Eats Voucher!</span>
-        </h1>
-        
-        <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
-          Order your favorite meals with a $750 Uber Eats credit!
+      <section className="px-6 pt-10 pb-8 text-center">
+        <p className="text-xs font-bold tracking-[0.2em] text-uber-green uppercase mb-4">
+          Exclusive Reward
         </p>
 
+        <h1 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground mb-3 text-balance">
+          Claim Your {display} Uber Eats Reward
+        </h1>
+
+        <p className="text-muted-foreground text-base max-w-sm mx-auto mb-8">
+          Complete the required steps below to continue toward your reward.
+        </p>
+
+        {/* Reward Card */}
+        <div className="max-w-sm mx-auto rounded-3xl bg-[#0a1f17] p-6 text-left shadow-xl mb-10">
+          <div className="flex items-start justify-between mb-8">
+            <div>
+              <p className="text-white/70 text-sm font-semibold mb-1">Uber Eats</p>
+              <p className="text-white text-2xl font-extrabold leading-none">REWARD</p>
+            </div>
+            <div className="bg-uber-green text-white text-xs font-bold px-3 py-1.5 rounded-full">
+              DIGITAL REWARD
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 pt-6">
+            <p className="text-white/60 text-sm mb-1">Total Value</p>
+            <p className="text-white text-5xl font-extrabold tracking-tight">{display}</p>
+          </div>
+        </div>
+
+        {/* How It Works */}
+        <div className="max-w-sm mx-auto text-left mb-8">
+          <h2 className="text-lg font-bold text-foreground mb-4">How It Works</h2>
+          <div className="space-y-3">
+            <StepCard step={1} description={`Click "Continue to Next Step"`} />
+            <StepCard step={2} description="Enter the requested information" />
+            <StepCard step={3} description="Complete the required sponsored activities" />
+            <StepCard step={4} description="Follow the instructions provided" />
+          </div>
+        </div>
+
+        {/* CTA */}
         <a href={affiliateLink} target="_blank" rel="noopener noreferrer">
-          <Button variant="cta" size="xl" className="w-full max-w-sm mx-auto">
-            Start Now
+          <Button
+            variant="cta"
+            size="xl"
+            className="w-full max-w-sm mx-auto uppercase tracking-wide text-sm font-bold"
+          >
+            Continue to Next Step
+            <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
         </a>
 
-        <p className="text-muted-foreground text-sm mt-6">
-          Open to US, CA, UK, AU residents, 18+
+        <p className="text-xs text-muted-foreground mt-4 max-w-sm mx-auto leading-relaxed">
+          Eligibility and completion requirements may vary. Review all offer terms before participating.
         </p>
-
-        {/* Food Image */}
-        <div className="mt-8 relative max-w-lg mx-auto">
-          <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-3xl" />
-          <img
-            src={foodHero}
-            alt="Delicious food delivery options"
-            className="w-full rounded-3xl shadow-card"
-          />
-          <div className="absolute top-4 right-4 bg-uber-green text-primary-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg">
-            $750 Sweepstakes
-          </div>
-        </div>
-      </section>
-
-      {/* Steps Section */}
-      <section className="px-6 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">
-          <span className="text-gradient-secondary">Claim Your $750</span>
-        </h2>
-        <p className="text-center text-muted-foreground mb-8">
-          Voucher in &lt;5 Minutes!
-        </p>
-
-        <div className="space-y-4 max-w-md mx-auto">
-          <StepCard
-            icon={CheckCircle}
-            step={1}
-            title="Take the Survey"
-            description="Answer a quick survey about your food preferences."
-          />
-          <StepCard
-            icon={Gift}
-            step={2}
-            title="Complete 3-5 Deals"
-            description="Sign up for 3-5 offers from our partners."
-          />
-          <StepCard
-            icon={DollarSign}
-            step={3}
-            title="Get Rewarded"
-            description="Receive your $750 Uber Eats voucher!"
-          />
-        </div>
-
-        {/* CTA Button */}
-        <div className="mt-10 text-center">
-          <a href={affiliateLink} target="_blank" rel="noopener noreferrer">
-            <Button variant="cta" size="xl" className="w-full max-w-sm mx-auto">
-              Start Now
-            </Button>
-          </a>
-
-          <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
-            <span className="w-4 h-4 border border-muted-foreground/50 rounded" />
-            <span>Secure Entry</span>
-            <span className="mx-2">•</span>
-            <span className="text-uber-green font-semibold">Uber Eats</span>
-          </div>
-        </div>
       </section>
 
       {/* Share Section */}
-      <section className="px-6 py-12 bg-card">
-        <div className="max-w-md mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-2">Boost Your Chances!</h2>
-          <p className="text-muted-foreground mb-6">Share for bonus entries!</p>
+      <section className="px-6 py-10 bg-muted">
+        <div className="max-w-sm mx-auto text-center">
+          <h2 className="text-lg font-bold mb-1">Boost Your Chances!</h2>
+          <p className="text-muted-foreground text-sm mb-5">Share for bonus entries!</p>
 
           <div className="grid grid-cols-2 gap-3">
-            <SocialButton 
-              icon={Share2} 
-              label="X (Twitter)" 
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("🍔 Win a $750 Uber Eats Voucher! Order your favorite meals for FREE!")}&url=${encodeURIComponent(affiliateLink)}`}
+            <SocialButton
+              icon={Share2}
+              label="X (Twitter)"
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(affiliateLink)}`}
             />
-            <SocialButton 
-              icon={MessageCircle} 
-              label="Instagram" 
+            <SocialButton
+              icon={MessageCircle}
+              label="Instagram"
               href="https://www.instagram.com/"
             />
           </div>
           <div className="mt-3">
-            <SocialButton 
-              icon={Share2} 
-              label="Facebook" 
+            <SocialButton
+              icon={Share2}
+              label="Facebook"
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(affiliateLink)}`}
-              className="w-full" 
+              className="w-full"
             />
           </div>
         </div>
