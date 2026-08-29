@@ -15,7 +15,7 @@ const SocialButton = ({ icon: Icon, label, href = "#", className }: SocialButton
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-uber-green text-primary-foreground font-semibold transition-all duration-300 hover:bg-uber-green/90 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg",
+        "flex items-center justify-center gap-3 px-5 py-3.5 rounded-2xl bg-muted text-foreground font-semibold transition-all duration-300 hover:bg-uber-green-light hover:text-uber-green hover:scale-[1.02] active:scale-[0.98] shadow-sm hover:shadow-md",
         className
       )}
     >
